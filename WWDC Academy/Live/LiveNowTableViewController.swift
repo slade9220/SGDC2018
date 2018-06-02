@@ -111,12 +111,11 @@ class LiveNowTableViewController: UITableViewController {
         }
         let todayDate = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-        let hour = 10
-        
-        let minute = 0
+        let hour = calendar?.component(.hour, from: todayDate as Date)
+        let minute = calendar?.component(.minute, from: todayDate as Date)
 
         if(dayEvents[indexPath.row].startingHour == hour) {
-            if(dayEvents[indexPath.row].startingMinute == minute ||  dayEvents[indexPath.row].startingMinute < minute) {
+            if(dayEvents[indexPath.row].startingMinute == minute! ||  dayEvents[indexPath.row].startingMinute < minute!) {
                 cell.subTitle.text = "Live Now | \(dayEvents[indexPath.row].location)"
                 cell.title.text = dayEvents[indexPath.row].name
             }
