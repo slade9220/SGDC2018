@@ -22,8 +22,9 @@ struct Event: Codable {
     var endingMinute: Int
     var location: String
     var calendarLink: String
+    var description: String
     
-    init(id: Int, name: String, tag: String, day: Int, startingHour: Int, startingMinute: Int, endingHour:Int, endingMinute:Int, location:String, calendarLink: String ) {
+    init(id: Int, name: String, tag: String, day: Int, startingHour: Int, startingMinute: Int, endingHour:Int, endingMinute:Int, location:String, calendarLink: String, description: String) {
         self.id = id
         self.name = name
         self.tag = tag
@@ -34,6 +35,7 @@ struct Event: Codable {
         self.endingMinute = endingMinute
         self.location = location
         self.calendarLink = calendarLink
+        self.description = description
     }
     
     init() {
@@ -47,6 +49,7 @@ struct Event: Codable {
         self.endingMinute = 0
         self.location = ""
         self.calendarLink = ""
+        self.description = ""
     }
 
 }
@@ -65,7 +68,7 @@ func loadEvents()->[Event] {
         
         do {
             events = try JSONDecoder().decode([Event].self, from: data)
-            print(events)
+            
         } catch let jsonErr {
             print("Error: ",jsonErr)
         }

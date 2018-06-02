@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         name.text = events.name
-        self.title = events.name
+//        self.title = events.name
         var startingMinute = "00"
         var endingMinute = "00"
         

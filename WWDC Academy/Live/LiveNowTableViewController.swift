@@ -26,15 +26,17 @@ class LiveNowTableViewController: UITableViewController {
         let hour = calendar?.component(.hour, from: todayDate as Date)
         let minute = calendar?.component(.minute, from: todayDate as Date)
         for event in events {
-            if(event.day == day && event.endingHour >= hour! ) {
-                if(event.endingHour == hour!){
-                    if(event.endingMinute >= minute!) {
+            if(event.tag != "Train") {
+                if(event.day == day && event.endingHour >= hour! ) {
+                    if(event.endingHour == hour!){
+                        if(event.endingMinute >= minute!) {
+                            dayEvents.append(event)
+                        }
+                    } else {
                         dayEvents.append(event)
                     }
-                } else {
-                    dayEvents.append(event)
+                    
                 }
-
             }
         }
         

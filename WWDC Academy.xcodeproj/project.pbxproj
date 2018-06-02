@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5F256FF120C21EB500C156E2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F256FF020C21EB500C156E2 /* Media.xcassets */; };
+		5F8C4CFF20C2C76600CC6A71 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */; };
+		5F8C4D0220C2C77F00CC6A71 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */; };
+		5F8C4D0420C2C7B400CC6A71 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0320C2C7B400CC6A71 /* Team.swift */; };
+		5F8C4D0620C2CC6800CC6A71 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0520C2CC6800CC6A71 /* TrainTableViewController.swift */; };
+		5F8C4D0820C2CC7400CC6A71 /* TrainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0720C2CC7400CC6A71 /* TrainTableViewCell.swift */; };
 		5FC3EE8720C14FA600AE1EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3EE8620C14FA600AE1EB1 /* AppDelegate.swift */; };
 		5FC3EE8E20C14FA700AE1EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3EE8C20C14FA700AE1EB1 /* Main.storyboard */; };
 		5FC3EE9320C14FA800AE1EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3EE9120C14FA800AE1EB1 /* LaunchScreen.storyboard */; };
@@ -27,6 +32,11 @@
 
 /* Begin PBXFileReference section */
 		5F256FF020C21EB500C156E2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
+		5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		5F8C4D0320C2C7B400CC6A71 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5F8C4D0520C2CC6800CC6A71 /* TrainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableViewController.swift; sourceTree = "<group>"; };
+		5F8C4D0720C2CC7400CC6A71 /* TrainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableViewCell.swift; sourceTree = "<group>"; };
 		5FC3EE8320C14FA600AE1EB1 /* WWDC Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WWDC Academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC3EE8620C14FA600AE1EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC3EE8D20C14FA700AE1EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +67,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F8C4CFD20C2C5B300CC6A71 /* Train */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C4D0520C2CC6800CC6A71 /* TrainTableViewController.swift */,
+				5F8C4D0720C2CC7400CC6A71 /* TrainTableViewCell.swift */,
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		5F8C4D0020C2C76A00CC6A71 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */,
+				5F8C4D0320C2C7B400CC6A71 /* Team.swift */,
+				5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
 		5FC3EE7A20C14FA600AE1EB1 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +107,8 @@
 			children = (
 				5FC3EE8620C14FA600AE1EB1 /* AppDelegate.swift */,
 				5FC3EE8C20C14FA700AE1EB1 /* Main.storyboard */,
+				5F8C4D0020C2C76A00CC6A71 /* Team */,
+				5F8C4CFD20C2C5B300CC6A71 /* Train */,
 				5FC3EEB820C2032B00AE1EB1 /* Live */,
 				5FC3EEB120C1B86D00AE1EB1 /* News */,
 				5FC3EEAE20C1B84100AE1EB1 /* Rules */,
@@ -201,15 +232,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC3EEAD20C182B500AE1EB1 /* DetailViewController.swift in Sources */,
+				5F8C4D0220C2C77F00CC6A71 /* TeamTableViewCell.swift in Sources */,
 				5FC3EEA320C1544600AE1EB1 /* News.swift in Sources */,
 				5FC3EE9F20C1533C00AE1EB1 /* EventTableViewCell.swift in Sources */,
 				5FC3EE9B20C1523F00AE1EB1 /* ScheduleTableViewController.swift in Sources */,
+				5F8C4D0620C2CC6800CC6A71 /* TrainTableViewController.swift in Sources */,
+				5F8C4CFF20C2C76600CC6A71 /* TeamTableViewController.swift in Sources */,
 				5FC3EEB320C1B9BE00AE1EB1 /* LiveNowTableViewController.swift in Sources */,
 				5FC3EE8720C14FA600AE1EB1 /* AppDelegate.swift in Sources */,
 				5FC3EEA520C161AA00AE1EB1 /* NewTableViewCell.swift in Sources */,
+				5F8C4D0820C2CC7400CC6A71 /* TrainTableViewCell.swift in Sources */,
 				5FC3EEAB20C1684300AE1EB1 /* RuleTableViewCell.swift in Sources */,
 				5FC3EEA720C167AB00AE1EB1 /* Rules.swift in Sources */,
 				5FC3EE9D20C1524C00AE1EB1 /* NewsTableViewController.swift in Sources */,
+				5F8C4D0420C2C7B400CC6A71 /* Team.swift in Sources */,
 				5FC3EEA120C1535600AE1EB1 /* Event.swift in Sources */,
 				5FC3EEA920C1683600AE1EB1 /* RulesTableViewController.swift in Sources */,
 				5FC3EEB720C1C1B700AE1EB1 /* LiveNowTableViewCell.swift in Sources */,
