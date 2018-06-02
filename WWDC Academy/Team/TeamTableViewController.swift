@@ -27,7 +27,7 @@ class TeamTableViewController: UITableViewController {
                     Team(name:"Anna Cassino",telegram:"AnnaCassino"),
                     Team(name:"Francesco Fuscaldo",telegram:"FranFus"),
                     Team(name:"Alessio Perrotti",telegram:"PerrottiAlessio"),
-                    Team(name:"Luciano Gucciardo",telegram:"lucianolang"),]
+                    Team(name:"Luciano Gucciardo",telegram:"lucianolang")]
 
     }
 
