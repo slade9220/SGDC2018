@@ -11,6 +11,7 @@ import UIKit
 class RuleTableViewCell: UITableViewCell {
     
     
+  
     @IBOutlet weak var textRules: UITextView!
     
     override func awakeFromNib() {

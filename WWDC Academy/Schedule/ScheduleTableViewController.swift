@@ -100,53 +100,71 @@ class ScheduleTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as? EventTableViewCell  else {
             fatalError("The dequeued cell is not an instance")
         }
+        
         switch indexPath.section {
         case 0:
             cell.title.text = day1[indexPath.row].name
-            if((day1[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):00 - \(day1[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(day1[indexPath.row].startingMinute)- \(day1[indexPath.row].ending)"
+            var endingMinute = "00"
+            var startingMinute = "00"
+            if(day1[indexPath.row].endingMinute != 0){
+                endingMinute = "\(day1[indexPath.row].endingMinute)"
             }
+            if(day1[indexPath.row].endingMinute != 0){
+                startingMinute = "\(day1[indexPath.row].startingMinute)"
+            }
+            cell.subTitle.text = "\(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(startingMinute)- \(day1[indexPath.row].endingHour):\(endingMinute)"
         case 1:
+            var endingMinute = "00"
+            var startingMinute = "00"
+            if(day2[indexPath.row].endingMinute != 0){
+                endingMinute = "\(day2[indexPath.row].endingMinute)"
+            }
+            if(day2[indexPath.row].endingMinute != 0){
+                startingMinute = "\(day2[indexPath.row].startingMinute)"
+            }
             cell.title.text = day2[indexPath.row].name
-            if((day2[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):00 - \(day2[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):\(day2[indexPath.row].startingMinute)- \(day2[indexPath.row].ending)"
-            }
+            cell.subTitle.text = "\(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):\(startingMinute)- \(day2[indexPath.row].endingHour):\(endingMinute)"
         case 2:
+            var endingMinute = "00"
+            var startingMinute = "00"
+            if(day3[indexPath.row].endingMinute != 0){
+                endingMinute = "\(day3[indexPath.row].endingMinute)"
+            }
+            if(day3[indexPath.row].endingMinute != 0){
+                startingMinute = "\(day3[indexPath.row].startingMinute)"
+            }
             cell.title.text = day3[indexPath.row].name
-            if((day3[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):00 - \(day3[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):\(day3[indexPath.row].startingMinute)- \(day3[indexPath.row].ending)"
-            }
+            cell.subTitle.text = "\(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):\(startingMinute)- \(day3[indexPath.row].endingHour):\(endingMinute)"
         case 3:
+            var endingMinute = "00"
+            var startingMinute = "00"
+            if(day4[indexPath.row].endingMinute != 0){
+                endingMinute = "\(day4[indexPath.row].endingMinute)"
+            }
+            if(day4[indexPath.row].endingMinute != 0){
+                startingMinute = "\(day4[indexPath.row].startingMinute)"
+            }
             cell.title.text = day4[indexPath.row].name
-            if((day4[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):00 - \(day4[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):\(day4[indexPath.row].startingMinute)- \(day4[indexPath.row].ending)"
-            }
+            cell.subTitle.text = "\(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):\(startingMinute)- \(day4[indexPath.row].endingHour):\(endingMinute)"
         case 4:
-            cell.title.text = day5[indexPath.row].name
-            if((day4[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):00 - \(day4[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):\(day5[indexPath.row].startingMinute)- \(day5[indexPath.row].ending)"
+            var endingMinute = "00"
+            var startingMinute = "00"
+            if(day5[indexPath.row].endingMinute != 0){
+                endingMinute = "\(day5[indexPath.row].endingMinute)"
             }
+            if(day5[indexPath.row].endingMinute != 0){
+                startingMinute = "\(day5[indexPath.row].startingMinute)"
+            }
+            cell.title.text = day5[indexPath.row].name
+            cell.subTitle.text = "\(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):\(startingMinute)- \(day5[indexPath.row].endingHour):\(endingMinute)"
         default:
             cell.title.text = events[indexPath.row].name
-            if((events[indexPath.row].startingMinute) == 0) {
-                cell.subTitle.text = "\(events[indexPath.row].location) | \(events[indexPath.row].startingHour):00 - \(events[indexPath.row].ending)"
-            } else {
-                cell.subTitle.text = "\(events[indexPath.row].startingHour):\(events[indexPath.row].startingMinute)- \(events[indexPath.row].ending)"
-            }
+
         }
 
         return cell
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {

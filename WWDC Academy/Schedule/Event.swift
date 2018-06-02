@@ -18,18 +18,20 @@ struct Event: Codable {
     var day: Int
     var startingHour: Int
     var startingMinute: Int
-    var ending: String
+    var endingHour: Int
+    var endingMinute: Int
     var location: String
     var calendarLink: String
     
-    init(id: Int, name: String, tag: String, day: Int, startingHour: Int, startingMinute: Int, ending:String, location:String, calendarLink: String ) {
+    init(id: Int, name: String, tag: String, day: Int, startingHour: Int, startingMinute: Int, endingHour:Int, endingMinute:Int, location:String, calendarLink: String ) {
         self.id = id
         self.name = name
         self.tag = tag
         self.day = day
         self.startingHour = startingHour
         self.startingMinute = startingMinute
-        self.ending = ending
+        self.endingHour = endingHour
+        self.endingMinute = endingMinute
         self.location = location
         self.calendarLink = calendarLink
     }
@@ -41,7 +43,8 @@ struct Event: Codable {
         self.day = 0
         self.startingHour = 0
         self.startingMinute = 0
-        self.ending = ""
+        self.endingHour = 0
+        self.endingMinute = 0
         self.location = ""
         self.calendarLink = ""
     }

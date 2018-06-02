@@ -20,16 +20,31 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         name.text = events.name
         self.title = events.name
+        var startingMinute = "00"
+        var endingMinute = "00"
+        
+        if(events.startingMinute != 0) {
+            startingMinute = "\(events.startingMinute)"
+        }
+        if(events.endingMinute != 0) {
+            endingMinute = "\(events.endingMinute)"
+        }
         
         switch events.day {
         case 0:
-            data.text =  "\(events.location) | 4 June \(events.startingHour):00 - \(events.ending)"
+            
+            data.text =  "\(events.location) | 4 June \(events.startingHour):\(startingMinute) - \(events.endingHour):\(endingMinute)"
         case 1:
-            data.text = "\(events.location) | 5 June \(events.startingHour):00 - \(events.ending)"
+            
+            data.text = "\(events.location) | 5 June \(events.startingHour):\(startingMinute) - \(events.endingHour):\(endingMinute)"
         case 2:
-            data.text = "\(events.location) | 6 June \(events.startingHour):00 - \(events.ending)"
+            
+            data.text = "\(events.location) | 6 June \(events.startingHour):\(startingMinute) - \(events.endingHour):\(endingMinute)"
         case 3:
-            data.text = "\(events.location) | 7 June \(events.startingHour):00 - \(events.ending)"
+            
+            data.text = "\(events.location) | 7 June \(events.startingHour):\(startingMinute) - \(events.endingHour):\(endingMinute)"
+        case 4:
+            data.text = "\(events.location) | 8 June \(events.startingHour):00 - \(events.endingHour):\(endingMinute)"
         default:
             data.text = "4 June"
         }
