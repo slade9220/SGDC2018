@@ -12,13 +12,13 @@
         <!--Schedule-->
         <scene sceneID="sat-Vb-0ew">
             <objects>
-                <tableViewController id="Bqr-Aq-LyE" customClass="ScheduleTableViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Bqr-Aq-LyE" customClass="ScheduleTableViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="t0H-YF-khu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="event" textLabel="FZH-Um-Npd" detailTextLabel="FX1-Pa-ClT" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="ige-ol-OWT" customClass="EventTableViewCell" customModule="WWDC_Academy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="event" textLabel="FZH-Um-Npd" detailTextLabel="FX1-Pa-ClT" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="ige-ol-OWT" customClass="EventTableViewCell" customModule="San_Giovanni_Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ige-ol-OWT" id="ijA-Fw-lqu">
@@ -75,7 +75,7 @@
         <!--Event-->
         <scene sceneID="8mY-JM-7oA">
             <objects>
-                <viewController id="Vkl-MC-vv6" customClass="DetailViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vkl-MC-vv6" customClass="DetailViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ACw-kx-mqT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,13 +158,13 @@
         <!--Team-->
         <scene sceneID="1bn-JK-VaS">
             <objects>
-                <tableViewController id="ocv-x1-Hxi" customClass="TeamTableViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ocv-x1-Hxi" customClass="TeamTableViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="BIM-Ca-5dT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="team" textLabel="sZB-X3-nva" style="IBUITableViewCellStyleDefault" id="Kfp-fZ-QDr" customClass="TeamTableViewCell" customModule="WWDC_Academy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="team" textLabel="sZB-X3-nva" style="IBUITableViewCellStyleDefault" id="Kfp-fZ-QDr" customClass="TeamTableViewCell" customModule="San_Giovanni_Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kfp-fZ-QDr" id="Cz0-AB-ag6">
@@ -199,13 +199,13 @@
         <!--Title-->
         <scene sceneID="uC9-qf-M6n">
             <objects>
-                <tableViewController id="Ri8-vu-zEv" customClass="LiveNowTableViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ri8-vu-zEv" customClass="LiveNowTableViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="qSr-Sd-9K0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="livenow" textLabel="U6r-gn-MZv" detailTextLabel="jfU-Ct-eyB" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="VOa-Yv-d4E" customClass="LiveNowTableViewCell" customModule="WWDC_Academy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="livenow" textLabel="U6r-gn-MZv" detailTextLabel="jfU-Ct-eyB" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="VOa-Yv-d4E" customClass="LiveNowTableViewCell" customModule="San_Giovanni_Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VOa-Yv-d4E" id="TZU-tQ-TT6">
@@ -251,13 +251,13 @@
         <!--Rules-->
         <scene sceneID="Oeg-Jb-jk9">
             <objects>
-                <tableViewController id="Foq-Uj-m4D" customClass="RulesTableViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Foq-Uj-m4D" customClass="RulesTableViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="SnK-SO-YtH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rule" rowHeight="144" id="dMk-8H-ADb" customClass="RuleTableViewCell" customModule="WWDC_Academy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rule" rowHeight="144" id="dMk-8H-ADb" customClass="RuleTableViewCell" customModule="San_Giovanni_Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dMk-8H-ADb" id="QON-o6-wHY">
@@ -338,13 +338,13 @@
         <!--Train-->
         <scene sceneID="YvY-rt-Iop">
             <objects>
-                <tableViewController id="F0I-tV-iKu" customClass="TrainTableViewController" customModule="WWDC_Academy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="F0I-tV-iKu" customClass="TrainTableViewController" customModule="San_Giovanni_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="1pT-hM-H8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="train" textLabel="ha3-B2-r0i" detailTextLabel="WRG-gw-byR" style="IBUITableViewCellStyleSubtitle" id="JKN-4O-1cs" customClass="TrainTableViewCell" customModule="WWDC_Academy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="train" textLabel="ha3-B2-r0i" detailTextLabel="WRG-gw-byR" style="IBUITableViewCellStyleSubtitle" id="JKN-4O-1cs" customClass="TrainTableViewCell" customModule="San_Giovanni_Schedule" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JKN-4O-1cs" id="7CJ-Xd-dGS">
@@ -388,7 +388,7 @@
         <scene sceneID="1CQ-Cr-ghB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q1z-P7-0QF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rules" image="rules" selectedImage="rules" id="3kQ-wn-Cqp"/>
+                    <tabBarItem key="tabBarItem" title="Rules" image="list" id="3kQ-wn-Cqp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XOb-hq-NKP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -445,7 +445,7 @@
     <resources>
         <image name="Group 3" width="24" height="24"/>
         <image name="calendar" width="30" height="30"/>
-        <image name="rules" width="40" height="48"/>
+        <image name="list" width="30" height="30"/>
         <image name="timer" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -53,13 +53,16 @@ class LiveNowTableViewController: UITableViewController {
         let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
         let weekOfYear = calendar?.component(.weekOfYear, from: todayDate as Date)
         if(weekOfYear == 23 ) {
+            
             reCheck()
         }
+        
     }
     
     @objc func reCheck() {
         
         dayEvents = []
+        events = loadEvents()
         
         let todayDate = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
@@ -69,6 +72,7 @@ class LiveNowTableViewController: UITableViewController {
         let hour = calendar?.component(.hour, from: todayDate as Date)
         let minute = calendar?.component(.minute, from: todayDate as Date)
         for event in events {
+            if(event.tag != "Train") {
             if(event.day == day && event.endingHour >= hour! ) {
                 if(event.endingHour == hour!){
                     if(event.endingMinute >= minute!) {
@@ -79,6 +83,7 @@ class LiveNowTableViewController: UITableViewController {
                 }
                 
             }
+        }
         }
     
         tableView.reloadData()
@@ -136,15 +141,21 @@ class LiveNowTableViewController: UITableViewController {
         let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
         let hour = calendar?.component(.hour, from: todayDate as Date)
         let minute = calendar?.component(.minute, from: todayDate as Date)
-
-        if(dayEvents[indexPath.row].startingHour == hour) {
-            if(dayEvents[indexPath.row].startingMinute == minute! ||  dayEvents[indexPath.row].startingMinute < minute!) {
+        cell.subTitle.textColor = UIColor.lightGray
+        if(dayEvents[indexPath.row].startingHour <= hour!) {
+            if(dayEvents[indexPath.row].startingMinute <= minute! &&  dayEvents[indexPath.row].startingHour == hour!) {
                 cell.subTitle.text = "Live Now | \(dayEvents[indexPath.row].location)"
                 cell.subTitle.textColor = UIColor.red
                 cell.title.text = dayEvents[indexPath.row].name
-                
+
+            } else{
+
+                cell.subTitle.text = "Live Now | \(dayEvents[indexPath.row].location)"
+                cell.subTitle.textColor = UIColor.red
+                cell.title.text = dayEvents[indexPath.row].name
             }
         } else {
+            cell.subTitle.textColor = UIColor.lightGray
             if( dayEvents[indexPath.row].startingMinute == 0) {
                 cell.subTitle.text = "\(dayEvents[indexPath.row].startingHour):00 | \(dayEvents[indexPath.row].location)"
                 cell.title.text = dayEvents[indexPath.row].name

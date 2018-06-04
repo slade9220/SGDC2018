@@ -43,11 +43,39 @@ class ScheduleTableViewController: UITableViewController {
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        events = loadEvents()
+        day1 = []
+        day2 = []
+        day3 = []
+        day4 = []
+        day5 = []
+        
+        for event in events {
+            if(event.tag != "Train"){
+                switch event.day {
+                case 0:
+                    day1.append(event)
+                case 1:
+                    day2.append(event)
+                case 2:
+                    day3.append(event)
+                case 3:
+                    day4.append(event)
+                case 4:
+                    day5.append(event)
+                default:
+                    day1.append(event)
+                }
+            }
+        }
+        
+        tableView.reloadData()
     }
+
+
 
     
     // MARK: - Table view data source
@@ -109,7 +137,7 @@ class ScheduleTableViewController: UITableViewController {
             if(day1[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day1[indexPath.row].endingMinute)"
             }
-            if(day1[indexPath.row].endingMinute != 0){
+            if(day1[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day1[indexPath.row].startingMinute)"
             }
             cell.subTitle.text = "\(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(startingMinute)- \(day1[indexPath.row].endingHour):\(endingMinute)"
@@ -119,7 +147,7 @@ class ScheduleTableViewController: UITableViewController {
             if(day2[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day2[indexPath.row].endingMinute)"
             }
-            if(day2[indexPath.row].endingMinute != 0){
+            if(day2[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day2[indexPath.row].startingMinute)"
             }
             cell.title.text = day2[indexPath.row].name
@@ -130,7 +158,7 @@ class ScheduleTableViewController: UITableViewController {
             if(day3[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day3[indexPath.row].endingMinute)"
             }
-            if(day3[indexPath.row].endingMinute != 0){
+            if(day3[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day3[indexPath.row].startingMinute)"
             }
             cell.title.text = day3[indexPath.row].name
@@ -141,7 +169,7 @@ class ScheduleTableViewController: UITableViewController {
             if(day4[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day4[indexPath.row].endingMinute)"
             }
-            if(day4[indexPath.row].endingMinute != 0){
+            if(day4[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day4[indexPath.row].startingMinute)"
             }
             cell.title.text = day4[indexPath.row].name
@@ -152,7 +180,7 @@ class ScheduleTableViewController: UITableViewController {
             if(day5[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day5[indexPath.row].endingMinute)"
             }
-            if(day5[indexPath.row].endingMinute != 0){
+            if(day5[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day5[indexPath.row].startingMinute)"
             }
             cell.title.text = day5[indexPath.row].name

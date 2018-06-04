@@ -23,10 +23,7 @@ class DetailViewController: UIViewController {
 //        self.title = events.name
         var startingMinute = "00"
         var endingMinute = "00"
-        
-        if(events.tag != "Academy"){
-            descText.isHidden = true
-        }
+        descText.isHidden = true
         
         if(events.startingMinute != 0) {
             startingMinute = "\(events.startingMinute)"

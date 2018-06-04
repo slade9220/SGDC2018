@@ -21,7 +21,7 @@ class TrainTableViewController: UITableViewController {
         trains = loadEvents()
         
         for train in trains {
-            if(train.tag == "Train"){
+            if(train.tag == "Train") {
                 switch train.day {
                 case 0:
                     trainsToPoz.append(train)
@@ -68,7 +68,7 @@ class TrainTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Trains to Pozzuli"
+            return "Trains to Pozzuoli"
         case 1:
             return "Trains to Campi Flegrei"
         case 2:
@@ -105,16 +105,16 @@ class TrainTableViewController: UITableViewController {
             var stminute = "00"
             var edminute = "00"
             if(trainsToCF[indexPath.row].startingMinute != 0){
-                stminute = "\(trainsToSal[indexPath.row].startingMinute)"
+                stminute = "\(trainsToCF[indexPath.row].startingMinute)"
             }
             if(trainsToCF[indexPath.row].endingMinute != 0){
-                edminute = "\(trainsToSal[indexPath.row].endingMinute)"
+                edminute = "\(trainsToCF[indexPath.row].endingMinute)"
             }
             if(trainsToCF[indexPath.row].startingMinute < 10){
-                stminute = "0\(trainsToSal[indexPath.row].startingMinute)"
+                stminute = "0\(trainsToCF[indexPath.row].startingMinute)"
             }
             if(trainsToCF[indexPath.row].endingMinute < 10){
-                edminute = "0\(trainsToSal[indexPath.row].endingMinute)"
+                edminute = "0\(trainsToCF[indexPath.row].endingMinute)"
             }
             cell.title.text = "Meeting time: \(trainsToCF[indexPath.row].startingHour):\(stminute)"
             cell.subTitle.text = "Departure time: \(trainsToCF[indexPath.row].endingHour):\(edminute)"
