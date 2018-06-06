@@ -11,12 +11,15 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
     
     
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     var events: [Event] = []
     var day1: [Event] = []
     var day2: [Event] = []
     var day3: [Event] = []
     var day4: [Event] = []
     var day5: [Event] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,34 +48,13 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        tabBarController?.tabBar.barStyle = .black
+        tableView.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.17, alpha:1.0)
         
-        events = loadEvents()
-        day1 = []
-        day2 = []
-        day3 = []
-        day4 = []
-        day5 = []
-        
-        for event in events {
-            if(event.tag != "Train"){
-                switch event.day {
-                case 0:
-                    day1.append(event)
-                case 1:
-                    day2.append(event)
-                case 2:
-                    day3.append(event)
-                case 3:
-                    day4.append(event)
-                case 4:
-                    day5.append(event)
-                default:
-                    day1.append(event)
-                }
-            }
-        }
-        
-        tableView.reloadData()
+    
+        reloadTable()
     }
 
 
@@ -122,6 +104,13 @@ class ScheduleTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.white
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
+    }
+    
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -129,18 +118,27 @@ class ScheduleTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance")
         }
         
+       
+        cell.backgroundColor = UIColor(red:0.12, green:0.12, blue:0.14, alpha:1.0)
+        cell.title.textColor = UIColor.white
+        cell.subTitle.textColor = UIColor.lightGray
+        
+        
+        
         switch indexPath.section {
         case 0:
             cell.title.text = day1[indexPath.row].name
+            
             var endingMinute = "00"
             var startingMinute = "00"
+            
             if(day1[indexPath.row].endingMinute != 0){
                 endingMinute = "\(day1[indexPath.row].endingMinute)"
             }
             if(day1[indexPath.row].startingMinute != 0){
                 startingMinute = "\(day1[indexPath.row].startingMinute)"
             }
-            cell.subTitle.text = "\(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(startingMinute)- \(day1[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = "\(day1[indexPath.row].tag.uppercased()) | \(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(startingMinute)- \(day1[indexPath.row].endingHour):\(endingMinute)"
         case 1:
             var endingMinute = "00"
             var startingMinute = "00"
@@ -151,7 +149,7 @@ class ScheduleTableViewController: UITableViewController {
                 startingMinute = "\(day2[indexPath.row].startingMinute)"
             }
             cell.title.text = day2[indexPath.row].name
-            cell.subTitle.text = "\(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):\(startingMinute)- \(day2[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = "\(day2[indexPath.row].tag.uppercased()) | \(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):\(startingMinute)- \(day2[indexPath.row].endingHour):\(endingMinute)"
         case 2:
             var endingMinute = "00"
             var startingMinute = "00"
@@ -162,7 +160,7 @@ class ScheduleTableViewController: UITableViewController {
                 startingMinute = "\(day3[indexPath.row].startingMinute)"
             }
             cell.title.text = day3[indexPath.row].name
-            cell.subTitle.text = "\(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):\(startingMinute)- \(day3[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = "\(day3[indexPath.row].tag.uppercased()) | \(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):\(startingMinute)- \(day3[indexPath.row].endingHour):\(endingMinute)"
         case 3:
             var endingMinute = "00"
             var startingMinute = "00"
@@ -173,7 +171,7 @@ class ScheduleTableViewController: UITableViewController {
                 startingMinute = "\(day4[indexPath.row].startingMinute)"
             }
             cell.title.text = day4[indexPath.row].name
-            cell.subTitle.text = "\(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):\(startingMinute)- \(day4[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = "\(day4[indexPath.row].tag.uppercased()) | \(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):\(startingMinute)- \(day4[indexPath.row].endingHour):\(endingMinute)"
         case 4:
             var endingMinute = "00"
             var startingMinute = "00"
@@ -184,7 +182,7 @@ class ScheduleTableViewController: UITableViewController {
                 startingMinute = "\(day5[indexPath.row].startingMinute)"
             }
             cell.title.text = day5[indexPath.row].name
-            cell.subTitle.text = "\(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):\(startingMinute)- \(day5[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = "\(day5[indexPath.row].tag.uppercased()) | \(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):\(startingMinute)- \(day5[indexPath.row].endingHour):\(endingMinute)"
         default:
             cell.title.text = events[indexPath.row].name
 
@@ -234,6 +232,86 @@ class ScheduleTableViewController: UITableViewController {
         }
         
     }
+    
+    @IBAction func segmentFilter(_ sender: Any) {
+        reloadTable()
+       
+    }
+    
+    func reloadTable() {
+        
+        
+        day1 = []
+        day2 = []
+        day3 = []
+        day4 = []
+        day5 = []
+        
+        for event in events{
+            switch segmentControl.selectedSegmentIndex {
+            case 0:
+                if(event.tag != "Train" && event.tag != "Academy") {
+                    
+                    switch event.day {
+                    case 0:
+                        day1.append(event)
+                    case 1:
+                        day2.append(event)
+                    case 2:
+                        day3.append(event)
+                    case 3:
+                        day4.append(event)
+                    case 4:
+                        day5.append(event)
+                    default:
+                        day1.append(event)
+                    }
+                    
+                }
+            case 1:
+                if(event.tag == "Academy"){
+                    switch event.day {
+                    case 0:
+                        day1.append(event)
+                    case 1:
+                        day2.append(event)
+                    case 2:
+                        day3.append(event)
+                    case 3:
+                        day4.append(event)
+                    case 4:
+                        day5.append(event)
+                    default:
+                        day1.append(event)
+                    }
+                }
+            default:
+                if(event.tag != "Train" ) {
+                    
+                    switch event.day {
+                    case 0:
+                        day1.append(event)
+                    case 1:
+                        day2.append(event)
+                    case 2:
+                        day3.append(event)
+                    case 3:
+                        day4.append(event)
+                    case 4:
+                        day5.append(event)
+                    default:
+                        day1.append(event)
+                    }
+                    
+                }
+            }
+            tableView.reloadData()
+            
+        }
+        
+        
+    }
+    
     
     
 }

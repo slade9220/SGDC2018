@@ -13,7 +13,6 @@
 		5F8C4D0620C2CC6800CC6A71 /* TrainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0520C2CC6800CC6A71 /* TrainTableViewController.swift */; };
 		5F8C4D0820C2CC7400CC6A71 /* TrainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0720C2CC7400CC6A71 /* TrainTableViewCell.swift */; };
 		5F8C4D0A20C2EE8900CC6A71 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0920C2EE8800CC6A71 /* Media.xcassets */; };
-		5F8C4D0E20C3698B00CC6A71 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0D20C3698B00CC6A71 /* Info.plist */; };
 		5FC3EE8720C14FA600AE1EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3EE8620C14FA600AE1EB1 /* AppDelegate.swift */; };
 		5FC3EE8E20C14FA700AE1EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3EE8C20C14FA700AE1EB1 /* Main.storyboard */; };
 		5FC3EE9320C14FA800AE1EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3EE9120C14FA800AE1EB1 /* LaunchScreen.storyboard */; };
@@ -32,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F47262720C541DD00EAA07C /* San Giovanni Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "San Giovanni Schedule.entitlements"; sourceTree = "<group>"; };
 		5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		5F8C4D0320C2C7B400CC6A71 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 		5FC3EE8520C14FA600AE1EB1 /* San Giovanni Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				5F47262720C541DD00EAA07C /* San Giovanni Schedule.entitlements */,
 				5FC3EE8620C14FA600AE1EB1 /* AppDelegate.swift */,
 				5F8C4D0920C2EE8800CC6A71 /* Media.xcassets */,
 				5FC3EE8C20C14FA700AE1EB1 /* Main.storyboard */,
@@ -193,6 +194,11 @@
 				TargetAttributes = {
 					5FC3EE8220C14FA600AE1EB1 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -219,7 +225,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8C4D0E20C3698B00CC6A71 /* Info.plist in Resources */,
 				5FC3EE9320C14FA800AE1EB1 /* LaunchScreen.storyboard in Resources */,
 				5F8C4D0A20C2EE8900CC6A71 /* Media.xcassets in Resources */,
 				5FC3EE8E20C14FA700AE1EB1 /* Main.storyboard in Resources */,
@@ -327,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -381,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -394,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "San Giovanni Schedule/San Giovanni Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH42K5TN42;
 				INFOPLIST_FILE = "$(SRCROOT)/San Giovanni Schedule/Info.plist";
@@ -405,7 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.slade9220.sgdc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -413,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "San Giovanni Schedule/San Giovanni Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BH42K5TN42;
 				INFOPLIST_FILE = "$(SRCROOT)/San Giovanni Schedule/Info.plist";
@@ -424,7 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.slade9220.sgdc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

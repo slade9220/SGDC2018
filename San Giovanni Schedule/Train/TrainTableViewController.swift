@@ -35,6 +35,11 @@ class TrainTableViewController: UITableViewController {
             }
             
         }
+        
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        tabBarController?.tabBar.barStyle = .black
+        tableView.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.17, alpha:1.0)
+        
 
     }
 
@@ -83,6 +88,10 @@ class TrainTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "train", for: indexPath) as? TrainTableViewCell  else {
             fatalError("The dequeued cell is not an instance")
         }
+        cell.backgroundColor = UIColor(red:0.12, green:0.12, blue:0.14, alpha:1.0)
+        cell.title.textColor = UIColor.white
+        cell.subTitle.textColor = UIColor.lightGray
+        
         switch indexPath.section {
         case 0:
             var stminute = "00"
@@ -99,7 +108,7 @@ class TrainTableViewController: UITableViewController {
             if(trainsToPoz[indexPath.row].endingMinute < 10 ){
                 edminute = "0\(trainsToPoz[indexPath.row].endingMinute)"
             }
-            cell.title.text = "Meeting time: \(trainsToPoz[indexPath.row].startingHour):\(stminute)"
+            cell.title.text = "Meeting time: \(trainsToPoz[indexPath.row].startingHour):\(stminute) at Welcome Desk"
             cell.subTitle.text = "Departure time: \(trainsToPoz[indexPath.row].endingHour):\(edminute)"
         case 1:
             var stminute = "00"
@@ -116,7 +125,7 @@ class TrainTableViewController: UITableViewController {
             if(trainsToCF[indexPath.row].endingMinute < 10){
                 edminute = "0\(trainsToCF[indexPath.row].endingMinute)"
             }
-            cell.title.text = "Meeting time: \(trainsToCF[indexPath.row].startingHour):\(stminute)"
+            cell.title.text = "Meeting time: \(trainsToCF[indexPath.row].startingHour):\(stminute) at Welcome Desk"
             cell.subTitle.text = "Departure time: \(trainsToCF[indexPath.row].endingHour):\(edminute)"
         case 2:
             var stminute = "00"
@@ -133,7 +142,7 @@ class TrainTableViewController: UITableViewController {
             if(trainsToSal[indexPath.row].endingMinute < 10){
                 edminute = "0\(trainsToSal[indexPath.row].endingMinute)"
             }
-            cell.title.text = "Meeting time: \(trainsToSal[indexPath.row].startingHour):\(stminute)"
+            cell.title.text = "Meeting time: \(trainsToSal[indexPath.row].startingHour):\(stminute) at Welcome Desk"
             cell.subTitle.text = "Departure time: \(trainsToSal[indexPath.row].endingHour):\(edminute)"
         default:
             cell.title.text = "Meeting time: 00:00"
@@ -143,5 +152,11 @@ class TrainTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.white
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
+    }
 
 }

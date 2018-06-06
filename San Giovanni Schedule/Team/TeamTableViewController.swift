@@ -24,13 +24,16 @@ class TeamTableViewController: UITableViewController {
                     Team(name:"Micol Salomone",telegram:"mico_L"),
                     Team(name:"Federico Fusco",telegram:"jamesbiond"),
                     Team(name:"Ibrahim Al Hazwani",telegram:"Ibraalhazwani"),
-                    Team(name:"Anna Cassino",telegram:"AnnaCassino"),
                     Team(name:"Francesco Fuscaldo",telegram:"FranFus"),
                     Team(name:"Alessio Perrotti",telegram:"PerrottiAlessio"),
                     Team(name:"Luciano Gucciardo",telegram:"lucianolang"),
                     Team(name:"Fabio Morra",telegram:"fabiosigma"),
-                    Team(name: "Florence-Sophie Meijers", telegram: "@florencesophie")]
+                    Team(name: "Florence-Sophie Meijers", telegram: "florencesophie"),
+                    Team(name: "Patrick Berghoudian", telegram: "ThePatPat")]
 
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        tabBarController?.tabBar.barStyle = .black
+        tableView.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.17, alpha:1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +58,8 @@ class TeamTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "team", for: indexPath) as! TeamTableViewCell
 
         cell.title.text = teams[indexPath.row].name
+        cell.backgroundColor = UIColor(red:0.12, green:0.12, blue:0.14, alpha:1.0)
+        cell.title.textColor = UIColor.white
         
 
         return cell
@@ -69,6 +74,13 @@ class TeamTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "Tap a name to chat"
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.white
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
     }
 
     

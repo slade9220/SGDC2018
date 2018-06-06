@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import UserNotifications
 
 class DetailViewController: UIViewController {
     
+    
     var events = Event()
+    var isNotification = false
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var data: UILabel!
@@ -18,9 +21,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var location: UIImageView!
     @IBOutlet weak var descText: UITextView!
     
+    @IBOutlet weak var notButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         name.text = events.name
-//        self.title = events.name
+        //        self.title = events.name
         var startingMinute = "00"
         var endingMinute = "00"
         descText.isHidden = true
@@ -53,13 +58,58 @@ class DetailViewController: UIViewController {
         
         tag.text = events.tag.uppercased()
         location.image = UIImage(named: events.location)
-
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (requests) in
+            for request in requests{
+                if(request.identifier == "\(self.events.id)" ) {
+                    self.notButton.image = UIImage(named: "cancel")
+                    self.isNotification = true
+                }
+            }
+        }
+        
+        view.backgroundColor = UIColor(red:0.12, green:0.12, blue:0.14, alpha:1.0)
+        name.textColor = UIColor.white
+        data.textColor = UIColor.lightGray
+        tag.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    @IBAction func notificationPressed(_ sender: Any) {
         
+        if(isNotification) {
+             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(events.id)"])
+            self.notButton.image = UIImage(named: "bell")
+            isNotification = false
+        } else {
+
+            let content = UNMutableNotificationContent()
+            content.title = "Event starts now!"
+            content.body = events.name
+            content.sound = UNNotificationSound.default()
+            
+            
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let dayWeek = events.day + 2
+
+            
+            let dateComponent = DateComponents(calendar: calendar as! Calendar, hour: events.startingHour, minute: events.startingMinute,  weekday: dayWeek,  weekOfYear: 23)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent,
+                                                        repeats: false)
+            let identifier = "\(events.id)"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                if(error == nil) {
+                    DispatchQueue.main.async {
+                        self.notButton.image = UIImage(named: "cancel")
+                        self.isNotification = true
+                    }
+                }
+            })
+        }
     }
-
-
-
+    
+    
+    
 }

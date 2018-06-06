@@ -19,8 +19,12 @@ class RulesTableViewController: UITableViewController {
 
         
         rules1 = [Rule(name: "Use of spaces",  text: "Lab 1 is reserved as a quiet space, please avoid disruptions")]
-        rules2 = [Rule(name: "Food and Drinks", text: "No food or drinks are allowed in the Seminar.") , Rule(name: "Food and Drinks", text: "Handling of food and drinks is limited to the Kitchen.") , Rule(name: "Food and Drinks", text: "As always, tidy up every space, leave it better than you found it.") , Rule(name: "Don’t have open containers close to the sofas to prevent spillages.", text: "Don’t have open containers close to the sofas to prevent spillages.")]
+        rules2 = [Rule(name: "Food and Drinks", text: "No food or drinks are allowed in the Main.") , Rule(name: "Food and Drinks", text: "As always, tidy up every space, leave it better than you found it.") , Rule(name: "Don’t have open containers close to the sofas or tables to prevent spillages.", text: "Don’t have open containers close to the sofas or table to prevent spillages.")]
         rules3 = [Rule(name: "Security", text: "After 7pm we only leave the academy in groups of 5 or more people, the more the merrier. \nGroups gather at the welcome desk 15 minutes before each train’s departure time.\nTrain departure timetables are available in Collab 1")]
+        
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        tabBarController?.tabBar.barStyle = .black
+        tableView.backgroundColor = UIColor(red:0.14, green:0.15, blue:0.17, alpha:1.0)
         
     }
 
@@ -71,6 +75,10 @@ class RulesTableViewController: UITableViewController {
             cell.textRules.text = rules1[indexPath.row].text
         }
         
+        cell.backgroundColor = UIColor(red:0.12, green:0.12, blue:0.14, alpha:1.0)
+        cell.textRules.textColor = UIColor.white
+        
+        
         return cell
     }
     
@@ -94,5 +102,12 @@ class RulesTableViewController: UITableViewController {
             return rules1.first?.name
         }
     }
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.white
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
+    }
+    
 
 }
