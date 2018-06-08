@@ -15,10 +15,11 @@ Main feature:
 - Json parsing
 
 Screenshots:
-![Screenshot](IMG_0926.png)
-![Screenshot](IMG_0927.png)
-![Screenshot](IMG_0928.png)
-![Screenshot](IMG_0931.png)
+<img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0926.png" width="15%"></img> 
+<img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0927.png" width="15%"></img> 
+<img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0928.png" width="15%"></img> 
+<img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0931.png" width="15%"></img>  
+
 
 
 
