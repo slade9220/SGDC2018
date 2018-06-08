@@ -56,7 +56,7 @@ struct Event: Codable {
 
 func loadEvents()->[Event] {
     var events : [Event] = []
-    let jsonUrl = "https://www.gennaroamura.it/academy/query/getEvents.php"
+    let jsonUrl = "https://.../query/getEvents.php"
     
     guard let url = URL(string: jsonUrl) else { return events }
     let request: URLRequest = URLRequest(url: url)
@@ -81,12 +81,3 @@ func loadEvents()->[Event] {
 }
 
 
-//func getDayOfWeek() {
-//    let todayDate = NSDate()
-//    let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-//    let weekOfYear = calendar?.component(.weekOfYear, from: todayDate as Date)
-//    let year = calendar?.component(.year, from: todayDate as Date)
-//    let dayWeek = calendar?.component(.weekday, from: todayDate as Date)
-//    let hour = calendar?.component(.hour, from: todayDate as Date)
-//    let minute = calendar?.component(.minute, from: todayDate as Date)
-//}

@@ -28,7 +28,7 @@ struct New: Codable {
 
 func loadNews()->[New] {
     var news : [New] = []
-    let jsonUrl = "https://www.gennaroamura.it/academy/query/getNews.php"
+    let jsonUrl = "https://../academy/query/getNews.php"
     
     guard let url = URL(string: jsonUrl) else { return news }
     let request: URLRequest = URLRequest(url: url)
