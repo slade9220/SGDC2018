@@ -8,7 +8,8 @@
 
 import UIKit
 import UserNotifications
-
+//custom
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,15 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         registerForPushNotifications()
-        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
        
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+        
         return true
     }
     
     func registerForPushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
+            print("Permission granted: \(granted)")
+            
             guard granted else { return }
             self.getNotificationSettings()
         }
@@ -47,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -56,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+         Messaging.messaging().shouldEstablishDirectChannel = false
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -64,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -71,11 +83,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    
+    @objc func refreshToken(notification: NSNotification) {
+        let refreshToken = InstanceID.instanceID().token()!
+        print("*** \(refreshToken) ***")
+    }
+  
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        Messaging.messaging().subscribe(toTopic: "SGDC")
+    }
+    
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-       
+        print("Failed to register: \(error)")
     }
-
+    
 
 }
+
 

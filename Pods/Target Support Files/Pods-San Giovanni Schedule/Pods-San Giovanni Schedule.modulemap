@@ -1,0 +1,6 @@
+framework module Pods_San_Giovanni_Schedule {
+  umbrella header "Pods-San Giovanni Schedule-umbrella.h"
+
+  export *
+  module * { export * }
+}

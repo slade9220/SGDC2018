@@ -94,56 +94,14 @@ class TrainTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            var stminute = "00"
-            var edminute = "00"
-            if(trainsToPoz[indexPath.row].startingMinute != 0 ){
-                stminute = "\(trainsToPoz[indexPath.row].startingMinute)"
-            }
-            if(trainsToPoz[indexPath.row].endingMinute != 0 ){
-                edminute = "\(trainsToPoz[indexPath.row].endingMinute)"
-            }
-            if(trainsToPoz[indexPath.row].startingMinute < 10 ){
-                stminute = "0\(trainsToPoz[indexPath.row].startingMinute)"
-            }
-            if(trainsToPoz[indexPath.row].endingMinute < 10 ){
-                edminute = "0\(trainsToPoz[indexPath.row].endingMinute)"
-            }
-            cell.title.text = "Meeting time: \(trainsToPoz[indexPath.row].startingHour):\(stminute) at Welcome Desk"
-            cell.subTitle.text = "Departure time: \(trainsToPoz[indexPath.row].endingHour):\(edminute)"
+            cell.title.text = returnTitle(events: trainsToPoz, indexPath: indexPath)
+            cell.subTitle.text = returnSubTitle(events: trainsToPoz, indexPath: indexPath)
         case 1:
-            var stminute = "00"
-            var edminute = "00"
-            if(trainsToCF[indexPath.row].startingMinute != 0){
-                stminute = "\(trainsToCF[indexPath.row].startingMinute)"
-            }
-            if(trainsToCF[indexPath.row].endingMinute != 0){
-                edminute = "\(trainsToCF[indexPath.row].endingMinute)"
-            }
-            if(trainsToCF[indexPath.row].startingMinute < 10){
-                stminute = "0\(trainsToCF[indexPath.row].startingMinute)"
-            }
-            if(trainsToCF[indexPath.row].endingMinute < 10){
-                edminute = "0\(trainsToCF[indexPath.row].endingMinute)"
-            }
-            cell.title.text = "Meeting time: \(trainsToCF[indexPath.row].startingHour):\(stminute) at Welcome Desk"
-            cell.subTitle.text = "Departure time: \(trainsToCF[indexPath.row].endingHour):\(edminute)"
+            cell.title.text = returnTitle(events: trainsToCF, indexPath: indexPath)
+            cell.subTitle.text = returnSubTitle(events: trainsToCF, indexPath: indexPath)
         case 2:
-            var stminute = "00"
-            var edminute = "00"
-            if(trainsToSal[indexPath.row].startingMinute != 0){
-                stminute = "\(trainsToSal[indexPath.row].startingMinute)"
-            }
-            if(trainsToSal[indexPath.row].endingMinute != 0){
-                edminute = "\(trainsToSal[indexPath.row].endingMinute)"
-            }
-            if(trainsToSal[indexPath.row].startingMinute < 10){
-                stminute = "0\(trainsToSal[indexPath.row].startingMinute)"
-            }
-            if(trainsToSal[indexPath.row].endingMinute < 10){
-                edminute = "0\(trainsToSal[indexPath.row].endingMinute)"
-            }
-            cell.title.text = "Meeting time: \(trainsToSal[indexPath.row].startingHour):\(stminute) at Welcome Desk"
-            cell.subTitle.text = "Departure time: \(trainsToSal[indexPath.row].endingHour):\(edminute)"
+            cell.title.text = returnTitle(events: trainsToSal, indexPath: indexPath)
+            cell.subTitle.text = returnSubTitle(events: trainsToSal, indexPath: indexPath)
         default:
             cell.title.text = "Meeting time: 00:00"
             cell.subTitle.text = "Departure time: 00:00"
@@ -157,6 +115,33 @@ class TrainTableViewController: UITableViewController {
         
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(red:0.99, green:0.37, blue:0.64, alpha:1.0)
+    }
+    
+    
+    func returnTitle(events: [Event], indexPath: IndexPath)->String {
+        var stminute = "00"
+        
+        if(events[indexPath.row].startingMinute != 0 ){
+            stminute = "\(events[indexPath.row].startingMinute)"
+        }
+        
+        if(events[indexPath.row].startingMinute < 10 ){
+            stminute = "0\(events[indexPath.row].startingMinute)"
+        }
+        
+        return  "Meeting time: \(events[indexPath.row].startingHour):\(stminute) at Welcome Desk"
+        
+    }
+    
+    func returnSubTitle(events: [Event], indexPath: IndexPath)->String {
+        var edminute = "00"
+        if(events[indexPath.row].endingMinute != 0) {
+            edminute = "\(trainsToSal[indexPath.row].endingMinute)"
+        }
+        if(events[indexPath.row].endingMinute < 10) {
+            edminute = "0\(events[indexPath.row].endingMinute)"
+        }
+        return "Departure time: \(events[indexPath.row].endingHour):\(edminute)"
     }
 
 }

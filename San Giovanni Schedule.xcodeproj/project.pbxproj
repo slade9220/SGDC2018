@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F13082320C8017E00D42336 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F13082220C8017D00D42336 /* GoogleService-Info.plist */; };
 		5F8C4CFF20C2C76600CC6A71 /* TeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */; };
 		5F8C4D0220C2C77F00CC6A71 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */; };
 		5F8C4D0420C2C7B400CC6A71 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C4D0320C2C7B400CC6A71 /* Team.swift */; };
@@ -28,9 +29,12 @@
 		5FC3EEAD20C182B500AE1EB1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3EEAC20C182B500AE1EB1 /* DetailViewController.swift */; };
 		5FC3EEB320C1B9BE00AE1EB1 /* LiveNowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3EEB220C1B9BE00AE1EB1 /* LiveNowTableViewController.swift */; };
 		5FC3EEB720C1C1B700AE1EB1 /* LiveNowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3EEB620C1C1B700AE1EB1 /* LiveNowTableViewCell.swift */; };
+		A05CEECE53382B1601DD9EDE /* Pods_San_Giovanni_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ED83A40958415AAA74F0BA /* Pods_San_Giovanni_Schedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51ED83A40958415AAA74F0BA /* Pods_San_Giovanni_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_San_Giovanni_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F13082220C8017D00D42336 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F47262720C541DD00EAA07C /* San Giovanni Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "San Giovanni Schedule.entitlements"; sourceTree = "<group>"; };
 		5F8C4CFE20C2C76600CC6A71 /* TeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewController.swift; sourceTree = "<group>"; };
 		5F8C4D0120C2C77F00CC6A71 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 		5FC3EEAC20C182B500AE1EB1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5FC3EEB220C1B9BE00AE1EB1 /* LiveNowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNowTableViewController.swift; sourceTree = "<group>"; };
 		5FC3EEB620C1C1B700AE1EB1 /* LiveNowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNowTableViewCell.swift; sourceTree = "<group>"; };
+		91A59B1A81B10C515087F18F /* Pods-San Giovanni Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-San Giovanni Schedule.release.xcconfig"; path = "Pods/Target Support Files/Pods-San Giovanni Schedule/Pods-San Giovanni Schedule.release.xcconfig"; sourceTree = "<group>"; };
+		F3894A4C2BC67D8927337AD9 /* Pods-San Giovanni Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-San Giovanni Schedule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-San Giovanni Schedule/Pods-San Giovanni Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +68,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05CEECE53382B1601DD9EDE /* Pods_San_Giovanni_Schedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0F660C36937BD3C63CB8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51ED83A40958415AAA74F0BA /* Pods_San_Giovanni_Schedule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5F8C4CFD20C2C5B300CC6A71 /* Train */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +107,8 @@
 			children = (
 				5FC3EE8520C14FA600AE1EB1 /* San Giovanni Schedule */,
 				5FC3EE8420C14FA600AE1EB1 /* Products */,
+				CA9AEA5A7BFFFEA56F27C50D /* Pods */,
+				5E0F660C36937BD3C63CB8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +135,7 @@
 				5FC3EEAF20C1B84D00AE1EB1 /* Schedule */,
 				5FC3EE9120C14FA800AE1EB1 /* LaunchScreen.storyboard */,
 				5F8C4D0D20C3698B00CC6A71 /* Info.plist */,
+				5F13082220C8017D00D42336 /* GoogleService-Info.plist */,
 			);
 			path = "San Giovanni Schedule";
 			sourceTree = "<group>";
@@ -162,6 +180,15 @@
 			path = Live;
 			sourceTree = "<group>";
 		};
+		CA9AEA5A7BFFFEA56F27C50D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3894A4C2BC67D8927337AD9 /* Pods-San Giovanni Schedule.debug.xcconfig */,
+				91A59B1A81B10C515087F18F /* Pods-San Giovanni Schedule.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FC3EE9720C14FA800AE1EB1 /* Build configuration list for PBXNativeTarget "San Giovanni Schedule" */;
 			buildPhases = (
+				3AD4C58B87C44F0C8288EB06 /* [CP] Check Pods Manifest.lock */,
 				5FC3EE7F20C14FA600AE1EB1 /* Sources */,
 				5FC3EE8020C14FA600AE1EB1 /* Frameworks */,
 				5FC3EE8120C14FA600AE1EB1 /* Resources */,
+				27C0A356FE197E5F2500C216 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +224,9 @@
 					5FC3EE8220C14FA600AE1EB1 = {
 						CreatedOnToolsVersion = 9.4;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -226,12 +258,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC3EE9320C14FA800AE1EB1 /* LaunchScreen.storyboard in Resources */,
+				5F13082320C8017E00D42336 /* GoogleService-Info.plist in Resources */,
 				5F8C4D0A20C2EE8900CC6A71 /* Media.xcassets in Resources */,
 				5FC3EE8E20C14FA700AE1EB1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27C0A356FE197E5F2500C216 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-San Giovanni Schedule/Pods-San Giovanni Schedule-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-San Giovanni Schedule/Pods-San Giovanni Schedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AD4C58B87C44F0C8288EB06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-San Giovanni Schedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5FC3EE7F20C14FA600AE1EB1 /* Sources */ = {
@@ -397,6 +473,7 @@
 		};
 		5FC3EE9820C14FA800AE1EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3894A4C2BC67D8927337AD9 /* Pods-San Giovanni Schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "San Giovanni Schedule/San Giovanni Schedule.entitlements";
@@ -417,6 +494,7 @@
 		};
 		5FC3EE9920C14FA800AE1EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91A59B1A81B10C515087F18F /* Pods-San Giovanni Schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "San Giovanni Schedule/San Giovanni Schedule.entitlements";

@@ -11,6 +11,7 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
     
     
+    
     @IBOutlet weak var segmentControl: UISegmentedControl!
     var events: [Event] = []
     var day1: [Event] = []
@@ -23,6 +24,7 @@ class ScheduleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         events = loadEvents()
         
@@ -128,64 +130,21 @@ class ScheduleTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             cell.title.text = day1[indexPath.row].name
-            
-            var endingMinute = "00"
-            var startingMinute = "00"
-            
-            if(day1[indexPath.row].endingMinute != 0){
-                endingMinute = "\(day1[indexPath.row].endingMinute)"
-            }
-            if(day1[indexPath.row].startingMinute != 0){
-                startingMinute = "\(day1[indexPath.row].startingMinute)"
-            }
-            cell.subTitle.text = "\(day1[indexPath.row].tag.uppercased()) | \(day1[indexPath.row].location) | \(day1[indexPath.row].startingHour):\(startingMinute)- \(day1[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = returnSubTitle(events: day1, indexPath: indexPath)
         case 1:
-            var endingMinute = "00"
-            var startingMinute = "00"
-            if(day2[indexPath.row].endingMinute != 0){
-                endingMinute = "\(day2[indexPath.row].endingMinute)"
-            }
-            if(day2[indexPath.row].startingMinute != 0){
-                startingMinute = "\(day2[indexPath.row].startingMinute)"
-            }
             cell.title.text = day2[indexPath.row].name
-            cell.subTitle.text = "\(day2[indexPath.row].tag.uppercased()) | \(day2[indexPath.row].location) | \(day2[indexPath.row].startingHour):\(startingMinute)- \(day2[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = returnSubTitle(events: day2, indexPath: indexPath)
         case 2:
-            var endingMinute = "00"
-            var startingMinute = "00"
-            if(day3[indexPath.row].endingMinute != 0){
-                endingMinute = "\(day3[indexPath.row].endingMinute)"
-            }
-            if(day3[indexPath.row].startingMinute != 0){
-                startingMinute = "\(day3[indexPath.row].startingMinute)"
-            }
             cell.title.text = day3[indexPath.row].name
-            cell.subTitle.text = "\(day3[indexPath.row].tag.uppercased()) | \(day3[indexPath.row].location) | \(day3[indexPath.row].startingHour):\(startingMinute)- \(day3[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = returnSubTitle(events: day3, indexPath: indexPath)
         case 3:
-            var endingMinute = "00"
-            var startingMinute = "00"
-            if(day4[indexPath.row].endingMinute != 0){
-                endingMinute = "\(day4[indexPath.row].endingMinute)"
-            }
-            if(day4[indexPath.row].startingMinute != 0){
-                startingMinute = "\(day4[indexPath.row].startingMinute)"
-            }
             cell.title.text = day4[indexPath.row].name
-            cell.subTitle.text = "\(day4[indexPath.row].tag.uppercased()) | \(day4[indexPath.row].location) | \(day4[indexPath.row].startingHour):\(startingMinute)- \(day4[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = returnSubTitle(events: day4, indexPath: indexPath)
         case 4:
-            var endingMinute = "00"
-            var startingMinute = "00"
-            if(day5[indexPath.row].endingMinute != 0){
-                endingMinute = "\(day5[indexPath.row].endingMinute)"
-            }
-            if(day5[indexPath.row].startingMinute != 0){
-                startingMinute = "\(day5[indexPath.row].startingMinute)"
-            }
             cell.title.text = day5[indexPath.row].name
-            cell.subTitle.text = "\(day5[indexPath.row].tag.uppercased()) | \(day5[indexPath.row].location) | \(day5[indexPath.row].startingHour):\(startingMinute)- \(day5[indexPath.row].endingHour):\(endingMinute)"
+            cell.subTitle.text = returnSubTitle(events: day5, indexPath: indexPath)
         default:
             cell.title.text = events[indexPath.row].name
-
         }
 
         return cell
@@ -306,10 +265,23 @@ class ScheduleTableViewController: UITableViewController {
                 }
             }
             tableView.reloadData()
-            
         }
         
+    }
+    
+    
+    func returnSubTitle(events: [Event], indexPath: IndexPath )-> String {
         
+        var endingMinute = "00"
+        var startingMinute = "00"
+        
+        if(events[indexPath.row].endingMinute != 0){
+            endingMinute = "\(events[indexPath.row].endingMinute)"
+        }
+        if(events[indexPath.row].startingMinute != 0){
+            startingMinute = "\(events[indexPath.row].startingMinute)"
+        }
+        return "\(events[indexPath.row].tag.uppercased()) | \(events[indexPath.row].location) | \(events[indexPath.row].startingHour):\(startingMinute)- \(events[indexPath.row].endingHour):\(endingMinute)"
     }
     
     
