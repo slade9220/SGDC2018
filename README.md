@@ -14,7 +14,7 @@ Main feature:
 - Swift 4.0 <br>
 - Json parsing
 
-Screenshots:
+Screenshots: <br>
 <img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0926.png" width="15%"></img> 
 <img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0927.png" width="15%"></img> 
 <img src="https://github.com/slade9220/SGDC2018/blob/master/IMG_0928.png" width="15%"></img> 
