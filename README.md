@@ -12,6 +12,6 @@ Main feature:
 - Smart filter based on tag <br>
 - Made in just 72 hours <br>
 - Swift 4.0 <br>
-- Json parsing <br>
+- Json parsing
 
 
